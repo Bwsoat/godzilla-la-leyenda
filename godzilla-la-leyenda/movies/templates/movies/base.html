@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Godzilla la leyenda</title>
+	<link rel="stylesheet" href="{% static 'css/zilla.css' %}">
+</head>
+<body>
+<div id="Agrupar">	
+	<header id="Cabecera" style= "background-image: url({% static 'img/Godzilla-2014.jpg' %});">
+			<hgroup>
+					<h1 id="Titulo">Godzilla la leyenda</h1>
+					<h2>Subtitulo principal</h2>
+			</hgroup>
+	</header>
+		<nav id="Menu">
+				<ul>
+					<li><a href="">Inicio</a></li>
+					<li><a href="">Descarga</a></li>
+					<li><a href="">Contactos</a></li>
+					<li><a href="">Ayuda</a></li>
+				</ul>
+		</nav>
+			<section id="Seccion">
+				{% block content %}
+                
+                {% endblock %}
+			</section>
+				<aside id="Columna">
+						<blockquote>Mensaje 1</blockquote>
+						<blockquote>Mensaje 2</blockquote>
+				</aside>
+					<footer id="Pie">
+						<span>La toho me va a romper el orto con los derechos</span>
+					</footer>
+</div>
+</body>
+</html>

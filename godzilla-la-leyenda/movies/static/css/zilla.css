@@ -61,6 +61,67 @@ border: 1px solid #F90101;
 #Catalogo{
 	margin: 5px;
 }
-figcaption{
+#poster{
+	display: flex;
+	flex-wrap: nowrap;
+}
+#text_movie{
+	display: flex;
+	flex-wrap: wrap;
 	font: bold 15px arias, sans-serif; 
 }
+/*-------------Formulario----------------*/
+  .form-register {
+	width: 400px;
+	background:  #aa582f;
+	padding: 30px;
+	margin: auto;
+	margin-top: 10px;
+	border-radius: 4px;
+	font-family: 'calibri';
+	color: white;
+  }
+  
+  .form-register h4 {
+	font-size: 22px;
+	margin-bottom: 20px;
+  }
+  
+  .controls {
+	width: 100%;
+	background: #802d0c;
+	padding: 10px;
+	border-radius: 4px;
+	margin-bottom: 16px;
+	border: 1px solid #b8220e;
+	font-family: 'calibri';
+	font-size: 18px;
+	color: white;
+  }
+  
+  .form-register p {
+	height: 40px;
+	text-align: center;
+	font-size: 18px;
+	line-height: 40px;
+  }
+  
+  .form-register a {
+	color: white;
+	text-decoration: none;
+  }
+  
+  .form-register a:hover {
+	color: rgb(201, 73, 73);
+	text-decoration: underline;
+  }
+  
+  .form-register .botons {
+	width: 100%;
+	background: #F90101;
+	border: none;
+	padding: 12px;
+	color: white;
+	margin: 16px 0;
+	font-size: 16px;
+  }

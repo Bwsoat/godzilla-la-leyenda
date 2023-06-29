@@ -1,0 +1,26 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block content %}
+<form action="{% url 'movies:upload_movie' %}" method="post">
+{% csrf_token %}
+    <section class="form-register">
+        <label for="titulo">Titulo:</label>
+        <input class="controls" type="text" name="titulo" id="titulo">
+    
+        <label for="poster">Poster:</label>
+        <input type="file" name="poster" id="poster">
+    
+        <label for="descripcion">Descripcion:</label>
+        <input class="controls" type="text" name="descripcion" id="descripcion">
+    
+        <label for="duracion">duracion:</label>
+        <input class="controls" type="text" name="duracion" id="duracion">
+    
+        <label for="descargar">Descarga:</label>
+        <input class="controls" type="text" name="descargar" id="descargar">
+    
+        <input class="botons" type="submit" value="Subir">
+    </section>
+</form>
+{% endblock  %}

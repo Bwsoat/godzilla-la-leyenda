@@ -1,66 +1,23 @@
+{% extends './base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<title>Godzilla la leyenda</title>
-	<link rel="stylesheet" href="{% static 'css/zilla.css' %}">
-</head>
-<body>
-<div id="Agrupar">	
-	<header id="Cabecera" style= "background-image: url({% static 'img/Godzilla-2014.jpg' %});">
-			<hgroup>
-					<h1 id="Titulo">Godzilla la leyenda</h1>
-					<h2>Subtitulo principal</h2>
-			</hgroup>
-	</header>
-		<nav id="Menu">
-				<ul>
-					<li><a href="">Inicio</a></li>
-					<li><a href="">Descarga</a></li>
-					<li><a href="">Contactos</a></li>
-					<li><a href="">Ayuda</a></li>
-				</ul>
-		</nav>
-			<section id="Seccion">
-					<article>
-						<header>
-							<hgroup>
-								<h1>Godzilla(1954)</h1>
-							</hgroup>
-						</header>
-								<figure>
-									<img src= {% static 'img/poster 1.t.jpg' %}>
-									<figcaption><p>Un gigante monstruo lanzallamas aterroriza a Japón<br> después de que una bomba atómica lo despierta <br>luego de estar dormido durante varios siglos.</p></figcaption>
-								</figure>
-					</article>
-					<article>
-						<header>
-							<hgroup>
-								<h1>Godzilla Raids Again(1955)</h1>
-							</hgroup>
-						</header>
-								<figure>
-									<img src= {% static 'img/poster 2.t.jpg' %}>
-									<figcaption><p>Un gigante monstruo lanzallamas aterroriza a Japón<br> después de que una bomba atómica lo despierta <br>luego de estar dormido durante varios siglos.</p></figcaption>
-					</article>
-					<article>
-						<header>
-							<hgroup>
-								<h1>King Kong vs. Godzilla(1962)</h1>
-							</hgroup>
-						</header>
-								<figure>
-									<img src= {% static 'img/poster 3.t.jpg' %}>
-									<figcaption><p>Un gigante monstruo lanzallamas aterroriza a Japón<br> después de que una bomba atómica lo despierta <br>luego de estar dormido durante varios siglos.</p></figcaption>
-					</article>
-			</section>
-				<aside id="Columna">
-						<blockquote>Mensaje 1</blockquote>
-						<blockquote>Mensaje 2</blockquote>
-				</aside>
-					<footer id="Pie">
-						<span>La toho me va a romper el orto con los derechos</span>
-					</footer>
-</div>
-</body>
-</html>
+{% block content %}
+{% if latest_movie_list %}
+<article class="publicacion">
+	{% for movie in latest_movie_list %}
+		<header>
+			<h1>{{ movie.title_movie }}</h1>
+		</header>
+		<figure id="poster">
+			<img src={% static 'img/poster 1.t.jpg' %} id="poster">
+			<figcaption id="text_movie">
+				<p>{{ movie.description_text }}</p>
+				<span>duracion: {{movie.duration}}</span>
+				<a href={{ movie.download }}><span>descargar aqui</span></a>
+			</figcaption>
+		</figure>
+	{% endfor %}
+</article>
+{% else %}
+<p>No movies availables.</p>
+{% endif %}
+{% endblock  %}
